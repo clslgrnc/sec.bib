@@ -1,0 +1,9 @@
+bandit
+black
+flake8
+isort
+mypy
+rope
+types-beautifulsoup4
+types-python-dateutil
+types-requests
