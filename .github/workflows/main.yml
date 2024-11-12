@@ -7,4 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          make
+          NOW=$(date -u +%y%m%d-%H%M%S)
+          git switch -c $NOW
+          touch toto
+          git add toto
+          git commit $NOW
+          gh pr create -B main -H $NOW --title 'Update sec.bib' --body 'Created by Github action'
