@@ -11,5 +11,7 @@ jobs:
           git switch -c $NOW
           touch toto
           git add toto
-          git commit $NOW
+          git commit -m $NOW
           gh pr create -B main -H $NOW --title 'Update sec.bib' --body 'Created by Github action'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
